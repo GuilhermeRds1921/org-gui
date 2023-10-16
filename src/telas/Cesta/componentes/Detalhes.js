@@ -1,25 +1,30 @@
 import React from "react";
-import { View, Image, StyleSheet, Text } from "react-native";
+import { View, Image, StyleSheet, TouchableOpacity } from "react-native";
 import Texto from "../../../componentes/Texto";
-import logo from "../../../../assets/logo.png";
+import Botao from "../../../componentes/Botao";
 
-export default function Detalhes() {
-    return (
-      <>
-        <Text style={estilo.nome}>Cesta de Verduras</Text>
-        <View style={estilo.fazenda}>
-          <Image source={logo} style={estilo.imagemFazenda} />
-          <Texto style={estilo.nomeFazenda}>Gui Farm</Texto>
-        </View>
-        <Texto style={estilo.descricao}>
-          Uma cesta com produtos selecionados cuidadosamente da fazenda direto
-          para sua cozinha.
-        </Texto>
-        <Text style={estilo.preco}>R$40,00</Text>
-      </>
-    );
+export default function Detalhes({
+  nome,
+  logoFazenda,
+  nomeFazenda,
+  descricao,
+  preco,
+}) {
+  return (
+    <>
+      <Texto style={estilos.nome}>{nome}</Texto>
+      <View style={estilos.fazenda}>
+        <Image source={logoFazenda} style={estilos.imagemFazenda} />
+        <Texto style={estilos.nomeFazenda}>{nomeFazenda}</Texto>
+      </View>
+      <Texto style={estilos.descricao}>{descricao}</Texto>
+      <Texto style={estilos.preco}>{preco}</Texto>
+
+      <Botao text={"Comprar"} onPress={() => {}} />
+    </>
+  );
 }
-estilo = StyleSheet.create({
+const estilos = StyleSheet.create({
   nome: {
     fontSize: 26,
     lineHeight: 42,
