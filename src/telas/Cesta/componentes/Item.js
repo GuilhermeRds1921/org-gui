@@ -2,7 +2,7 @@ import React from "react";
 import Texto from "../../../componentes/Texto";
 import { View, Image, StyleSheet } from "react-native";
 
-export default function Item({ nome, imagem }) {
+export default function Item({ item: { nome, imagem } }) {
   return (
     <View style={estilos.item}>
       <Image source={imagem} style={estilos.imagem} />
@@ -16,7 +16,7 @@ const estilos = StyleSheet.create({
     flexDirection: "row",
     borderBottomWidth: 1,
     borderBottomColor: "#ECECEC",
-    paddingBottom: 16,
+    padding: 16,
     alignItems: "center",
   },
   imagem: {

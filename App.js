@@ -2,6 +2,8 @@ import { StatusBar, SafeAreaView, View } from "react-native";
 import Cesta from "./src/telas/Cesta";
 import mock from "./src/mocks/cesta";
 import AppLoading from "expo-app-loading";
+import { NavigationContainer } from "@react-navigation/native";
+
 import {
   useFonts,
   Montserrat_400Regular,
@@ -18,7 +20,7 @@ export default function App() {
     return <AppLoading />;
   }
   return (
-    <SafeAreaView>
+    <SafeAreaView style={{flex:1}}>
       <StatusBar />
       <Cesta {...mock} />
     </SafeAreaView>

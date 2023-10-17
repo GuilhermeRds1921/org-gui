@@ -3,6 +3,7 @@ import { StyleSheet, View, FlatList } from "react-native";
 import Topo from "./componentes/Topo";
 import Detalhes from "./componentes/Detalhes";
 import Item from "./componentes/Item";
+import Texto from "../../componentes/Texto";
 
 export default function Cesta({ topo, detalhes, itens }) {
   return (
@@ -15,7 +16,7 @@ export default function Cesta({ topo, detalhes, itens }) {
           return (
             <>
               <Topo {...topo} />
-              <View style={estilo.cesta}>
+              <View sytle={estilo.cesta}>
                 <Detalhes {...detalhes} />
               </View>
             </>
